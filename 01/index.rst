@@ -4,16 +4,16 @@
 ===============================
 
 
-Linux システムコール読書会
-==========================
+Linux システムコール読書会 #1
+=============================
 
 .. s6:: styles
 
     h2: {fontSize:'120%', textAlign:'center', marginTop:'10%'},
 
 
-#1 getpid
----------
+プロセス管理編 #1 〜getpid〜
+----------------------------
 
 2012/07/12
 
@@ -55,10 +55,6 @@ Linux システムコール読書会
 ご挨拶
 ======
 
-.. s6:: styles
-
-    h2: {fontSize:'150%', textAlign:'center', margin:'30% auto'}
-
 
 会場説明
 ========
@@ -78,6 +74,8 @@ Linux システムコール読書会
 進め方
 ======
 
+- 自己紹介タイム
+
 - ソースを読む
 
   - ソースは `サイト <http://linuxsyscall.readthedocs.org/en/latest/index.html>`_ から
@@ -92,7 +90,11 @@ Linux システムコール読書会
 
    'ul': {marginLeft: '5%'},
    'ul/li/ul': {marginLeft: '5%'},
-    
+
+   
+自己紹介タイム
+==============
+
 
 システムコールとは
 ==================
@@ -120,6 +122,32 @@ Linux カーネル 2.6 解読室 P.94 より
    p: {fontSize:'80%', textAlign:'center', marginTop: '20%'}
 
 
+getpid って何?
+==============
+
+::
+
+   NAME
+          getpid, getppid - get process identification
+
+   SYNOPSIS
+          #include <sys/types.h>
+          #include <unistd.h>
+
+          pid_t getpid(void);
+          pid_t getppid(void);
+
+   DESCRIPTION
+          getpid() returns the process ID of the calling process.  (This is often used by routines that generate unique temporary filenames.)
+
+          getppid() returns the process ID of the parent of the calling process.
+
+
+.. s6:: styles
+
+   div: {fontSize: '50%', wordWrap: 'break-all', width: '100%'},
+
+
 今日のサンプルコード
 ====================
 
@@ -127,7 +155,7 @@ Linux カーネル 2.6 解読室 P.94 より
 .. literalinclude:: _static/sample.c
    :language: c
 
-:download:`_static/sample.c`
+:download:`サンプルコード <_static/sample.c>`
 
 .. s6:: styles
 
